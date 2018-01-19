@@ -16,6 +16,19 @@ function resetCars() {
 	
 }
 
+//pivot car
+
+var totalDegreesRotated = 0;
+	var rotateCar = function(direction) {
+		var degreesToIncrement;
+		if (direction == 0) {
+			degreesToIncrement = 90;
+		} else {
+			degreesToIncrement = -90;
+		}
+		totalDegreesRotated = totalDegreesRotated + degreesToIncrement;
+		document.querySelector(".carImage1").style.transform = `rotate(${totalDegreesRotated}deg)`;
+	}
 
 resetCars();
 
