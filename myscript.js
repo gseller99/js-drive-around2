@@ -1,5 +1,5 @@
  let car1 = document.querySelector('.carImage1');
-   	let intersectionWait = 2000;
+   	let intersectionWait = 1000;
    	let roadSpeed = 10;
    	let intersectionSpeed = 200;
 
@@ -60,8 +60,10 @@ function car1MoveIntersectionEast() {
 	let car1Top = getComputedStyle(car1).top.replace('px', '');
 	car1.style.left = `${parseInt(car1.style.left.replace("px", "")) + 10}px`;
 
-	if(car1Left >= 760) {
-		startCar1South();
+	if(car1Left >= 780) {
+		stopCars();
+		rotateCar(0)
+		setTimeout(startCar1South, 1000);
 	}
 }
 
@@ -81,7 +83,7 @@ function moveCar1South () {
 	let car1Left = getComputedStyle(car1).left.replace('px', '');
 	let car1Top = getComputedStyle(car1).top.replace('px', '');
 
-	if(car1Top >= 690) {
+	if(car1Top >= 670) {
 		stopCars();
 	setTimeout(startCar1IntersectionSouth, intersectionWait);
 	}
@@ -103,7 +105,9 @@ function car1MoveIntersectionSouth() {
 	car1.style.top = `${parseInt(car1.style.top.replace("px", "")) + 10}px`;
 
 	if(car1Top >= 810) {
-		startCar1West();
+		stopCars();
+		rotateCar(0)
+		setTimeout(startCar1West, 1000);
 	}
 }
 
@@ -142,9 +146,10 @@ function car1MoveIntersectionWest() {
 	let car1Top = getComputedStyle(car1).top.replace('px', '');
 	car1.style.left = `${parseInt(car1.style.left.replace("px", "")) - 10}px`;
 
-	if(car1Left <= 70) {
+	if(car1Left <= 50) {
 		stopCars();
-		startCar1North();
+		rotateCar(0)
+		setTimeout(startCar1North, 1000);
 	}
 }
 
@@ -163,7 +168,7 @@ function moveCar1North () {
 	let car1Left = getComputedStyle(car1).left.replace('px', '');
 	let car1Top = getComputedStyle(car1).top.replace('px', '');
 
-	if(car1Top <= 210) {
+	if(car1Top <= 230) {
 		stopCars();
 	setTimeout(startCar1IntersectionNorth, intersectionWait);
 	}
@@ -185,7 +190,8 @@ function car1MoveIntersectionNorth() {
 
 	if(car1Top <= 90) {
 		stopCars();
-		startCar1();
+		rotateCar(0)
+		setTimeout(startCar1, 1000);
 	}
 }
 
