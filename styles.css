@@ -29,11 +29,11 @@
         /*margin: 20px;*/
        /* top: 120px;
         left: 6050px;*/
-        background-color: mediumblue;
+        /*background-color: mediumblue;
         height: 20px;
         width: 20px;
         position: absolute;
-        z-index: 51;
+        z-index: 51;*/
     }
 
     #car3 {
@@ -109,4 +109,14 @@
     	color: orange;
     	left: 40px;
     	top: 720px;
+    }
+
+    .carImage1 {
+    	/*background-color: mediumblue;*/
+        height: 20px;
+        width: 50px;
+        position: absolute;
+        z-index: 51;
+        top: 120px;
+        left: 800px;
     }
