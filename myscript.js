@@ -1,9 +1,20 @@
- let car1 = document.querySelector('.carImage1');
-   	let intersectionWait = 1000;
-   	let roadSpeed = 10;
-   	let intersectionSpeed = 200;
 
-    var IntervalId;
+alert("Welcome to Gary's Animated Racetrack. You are able pick the road speed of a car, how long it waits at intersections, and its speed through intersections. Click ok to continue."); 
+
+let car1 = document.querySelector('.carImage1');
+
+// let car2 = document.querySelector('.carImage2');
+   	
+// let car3 = document.querySelector('.carImage3');
+
+// let roadSpeed = 10;   	
+let roadSpeed = prompt("Pick road speed; note: 1 is fastest and 100 medium. Must be a number with no commas.");
+// let intersectionWait = 1000;
+let intersectionWait = prompt("Pick intersection wait time; note: 1000 is equal to 1 second. Must be a number with no commas.");
+//let intersectionSpeed = 200;
+let intersectionSpeed = prompt("Pick intersection speed; note 50 is fast and 200 medium. Must be a number with no commas.");
+
+var IntervalId;
 
 
 function resetCars() {
