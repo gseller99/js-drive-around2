@@ -22,6 +22,12 @@ function carSkid(e) {
         audio.play();
     }
 
+function carRunning(e) {
+        var audio = document.querySelector('audio[data-key="carRunning"]');
+        audio.currentTime = 0;
+        audio.play();
+    }  
+
 function resetCars() {
 	car1.style.top = "80px";
 	car1.style.left = "60px";
@@ -36,6 +42,7 @@ function resetCars() {
 
 var totalDegreesRotated = 0;
 	var rotateCar = function(direction) {
+		carSkid();
 		var degreesToIncrement;
 		if (direction == 0) {
 			degreesToIncrement = 90;
@@ -53,8 +60,10 @@ resetCars();
 //Move car East
 
 function moveCar1East() {
+	// carRunning();
 	let car1Left = getComputedStyle(car1).left.replace('px', '');
 	let car1Top = getComputedStyle(car1).top.replace('px', '');
+
 
 	if(car1Left >= 640) {
 		carSkid();
@@ -98,6 +107,7 @@ function startCar1South () {
 //Move car South
 
 function moveCar1South () {
+	// carRunning();
 	let car1Left = getComputedStyle(car1).left.replace('px', '');
 	let car1Top = getComputedStyle(car1).top.replace('px', '');
 
@@ -142,6 +152,7 @@ function startCar1West () {
 //Move car west
 
 function moveCar1West () {
+	// carRunning();
 	let car1Left = getComputedStyle(car1).left.replace('px', '');
 	let car1Top = getComputedStyle(car1).top.replace('px', '');
 
@@ -185,6 +196,7 @@ function startCar1West () {
 //Move car north
 
 function moveCar1North () {
+	// carRunning();
 	let car1Left = getComputedStyle(car1).left.replace('px', '');
 	let car1Top = getComputedStyle(car1).top.replace('px', '');
 
@@ -226,18 +238,22 @@ function startCar1North () {
 // Intersection timeouts and calling next move
 
 function startCar1IntersectionEast () {
+	// carRunning();
 	intervalId = setInterval(car1MoveIntersectionEast, intersectionSpeed)
 }
 
 function startCar1IntersectionSouth () {
+	// carRunning();
 	intervalId = setInterval(car1MoveIntersectionSouth, intersectionSpeed)
 }
 
 function startCar1IntersectionWest () {
+	// carRunning();
 	intervalId = setInterval(car1MoveIntersectionWest, intersectionSpeed)
 }
 
 function startCar1IntersectionNorth () {
+	// carRunning();
 	intervalId = setInterval(car1MoveIntersectionNorth, intersectionSpeed)
 }
 
@@ -245,6 +261,7 @@ function startCar1IntersectionNorth () {
 //Initial start of car
 
 function startCar1() {
+	// carRunning();
 	intervalId = setInterval(moveCar1East, roadSpeed);
 }
 
