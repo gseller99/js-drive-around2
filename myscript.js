@@ -16,6 +16,11 @@ let intersectionSpeed = prompt("Pick intersection speed; note 50 is fast and 200
 
 var IntervalId;
 
+function carSkid(e) {
+        var audio = document.querySelector('audio[data-key="carSkid"]');
+        audio.currentTime = 0;
+        audio.play();
+    }
 
 function resetCars() {
 	car1.style.top = "80px";
@@ -52,6 +57,7 @@ function moveCar1East() {
 	let car1Top = getComputedStyle(car1).top.replace('px', '');
 
 	if(car1Left >= 640) {
+		carSkid();
 		stopCars();
 	setTimeout(startCar1IntersectionEast, intersectionWait);
 	}
@@ -62,6 +68,7 @@ function moveCar1East() {
 	console.log(car1Top + ' = top');
 
 	car1.style.left = `${parseInt(car1.style.left.replace("px", "")) + 10}px`;
+	
 }
 
 //Move car East through intersection
@@ -95,6 +102,7 @@ function moveCar1South () {
 	let car1Top = getComputedStyle(car1).top.replace('px', '');
 
 	if(car1Top >= 670) {
+		carSkid();
 		stopCars();
 	setTimeout(startCar1IntersectionSouth, intersectionWait);
 	}
@@ -138,6 +146,7 @@ function moveCar1West () {
 	let car1Top = getComputedStyle(car1).top.replace('px', '');
 
 	if(car1Left <= 190) {
+		carSkid();
 		stopCars();
 	setTimeout(startCar1IntersectionWest, intersectionWait);
 	}
@@ -180,6 +189,7 @@ function moveCar1North () {
 	let car1Top = getComputedStyle(car1).top.replace('px', '');
 
 	if(car1Top <= 230) {
+		carSkid();
 		stopCars();
 	setTimeout(startCar1IntersectionNorth, intersectionWait);
 	}
